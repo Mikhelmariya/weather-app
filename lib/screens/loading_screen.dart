@@ -15,16 +15,17 @@ void getLocation() async {
   print(location.longitude);
 }
 
-// void getData() async {
-//   http.Response response = await http.get('API for weather');
-//   print(response.body);
-// }
+void getCurrentData() async {
+  Location location = Location();
+  await location.getData();
+}
 
 class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();
     getLocation();
+    getCurrentData();
   }
 
   Widget build(BuildContext context) {
